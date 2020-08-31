@@ -125,22 +125,17 @@ SSH into the control node and follow the steps below:
 1. Copy the configuration file to the Ansible container
 2. Add the VM’s to Ansible’s hosts file by typing the command nano /etc/ansible/hosts. When you run playbooks with Ansible, you specify which group to run them on. This allows you to run certain playbooks on some machines, but not on others.
 
-     `/etc/ansible/hosts`
+     ```
+     /etc/ansible/hosts
 
+     [webservers]
+     10.0.0.4 ansible_python_interpreter=/usr/bin/python3
+     10.0.0.5 ansible_python_interpreter=/usr/bin/python3
+     10.0.0.6 ansible_python_interpreter=/usr/bin/python3
 
-     `[webservers]`
-
-
-     `10.0.0.4 ansible_python_interpreter=/usr/bin/python3`
-
-     `10.0.0.5 ansible_python_interpreter=/usr/bin/python3`
-
-     `10.0.0.6 ansible_python_interpreter=/usr/bin/python3`
-
-     `[elk]`
-
-
-     `10.1.0.4 ansible_python_interpreter=/usr/bin/python3`
+     [elk]
+     10.1.0.4 ansible_python_interpreter=/usr/bin/python3
+     ```
 
 
 
@@ -153,6 +148,16 @@ SSH into the control node and follow the steps below:
 
 How do I specify which machine to install the ELK server on versus which to install Filebeat on? The IP address for the Elk group will need to be updated in the hosts file. Within the header of the install-elk.yml, the “hosts” field needs to be specified as Elk.
 
+```
+- hosts: elk
+  become: true
+  tasks:
+  - name: docker.io
+    apt:
+      update_cache: yes
+      name: docker.io
+      state: present
+```
 
 
 ### Specific Commands Used to Run and Edit the Playbook
