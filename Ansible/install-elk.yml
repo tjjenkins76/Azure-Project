@@ -1,0 +1,32 @@
+---
+- hosts: elk
+  become: true
+  tasks:
+  - name: docker.io
+    apt:
+      update_cache: yes
+      name: docker.io
+      state: present
+
+  - name: Install pip3
+    apt:
+      name: python3-pip
+      state: present
+
+  - name: Install Docker python module
+    pip:
+      name: docker
+      state: present
+
+  - name: Updating vm.max_map_count value
+    sysctl:
+      name: vm.max_map_count
+      value: 262144
+      state: present
+      restart_policy: always
+      published_ports:
+       - "5601:5601"
+       - "9200:9200"
+       - "5044:5044"
+
+
