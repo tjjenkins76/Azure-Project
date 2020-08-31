@@ -136,9 +136,9 @@ $ sudo docker container list -a
 $ sudo docker start ndly_clarke
 $ sudo docker attach ndly_clarke
 Use the following command to run the playbook:
-# ansible-playbook etc/ansible/roles/filebeat-playbook.yml
+ ansible-playbook etc/ansible/roles/filebeat-playbook.yml
 To update or edit the playbook, run the command:
-# nano /etc/ansible/roles/filebeat-playbook.yml
+ nano /etc/ansible/roles/filebeat-playbook.yml
 
 
 
