@@ -70,7 +70,7 @@ A summary of the access policies in place can be found in the table below.
 | Load Balancer  |          Yes		    |     any 	                     |   	
 | Jump Box	    |	   No		    |     71.63.124.128 	         |
 | DVWA-VM’s      | 	   No		    |     10.0.0.4	    	         | 
-| Elk Stack           | 	   No		    |     10.0.0.4	         	         | 
+| Elk Stack           | 	   No		    |     71.63.124.128	         	         | 
 
 
 ### Elk Configuration
