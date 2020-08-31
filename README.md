@@ -144,9 +144,9 @@ SSH into the control node and follow the steps below:
 
 
 
-3. Create the install-elk.yml playbook and save it to etc/ansible/roles directory.
+3. Create the `install-elk.yml playbook` and save it to `etc/ansible/roles directory`.
 
-4. Run the playbook using the command ansible-playbook install-ek.yml
+4. Run the playbook using the command `ansible-playbook install-ek.yml`
 
 5. Navigate to Kibana to check that the installation worked as expected: http://13.66.220.177:5601/app/kibana.
 
