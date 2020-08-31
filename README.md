@@ -51,7 +51,7 @@ The configuration details of each machine may be found below.
 
 
 
-Access Policies
+**Access Policies**
 
 The machines on the internal network are not exposed to the public Internet. 
 
@@ -73,7 +73,7 @@ A summary of the access policies in place can be found in the table below.
 | Elk Stack           | 	   No		    |     10.0.0.4	         	         | 
 
 
-Elk Configuration
+**Elk Configuration**
 
 Ansible was used to automate the configuration of the ELK machine. No configuration was performed manually, which is advantageous because…
 
@@ -95,7 +95,7 @@ The following screenshot displays the result of running `docker ps` after succes
 
 (Diagrams/docker_ps_output.png)
 
-Target Machines & Beats
+**Target Machines & Beats**
 
 This ELK server is configured to monitor the following machines:
 
@@ -113,7 +113,7 @@ Filebeats collects system files and log events, then forwards the data to Logsta
 Metricbeats collect systems and service metrics, such as memory and CPU usage, and forwards the information to Logstash and Elasticserver.
 
 
-Using the Playbook
+**Using the Playbook**
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
