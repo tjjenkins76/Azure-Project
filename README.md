@@ -148,7 +148,7 @@ SSH into the control node and follow the steps below:
 
 4. Run the playbook using the command ansible-playbook install-ek.yml
 
-5. The URL to check and see if the ELK server is running is http://13.66.220.177:5601/app/kibana.
+5. Navigate to Kibana to check that the installation worked as expected: http://13.66.220.177:5601/app/kibana.
 
 ### Specific Commands Used to Run and Edit the Playbook
 
