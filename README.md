@@ -14,12 +14,12 @@ filebeat-playbook.yml
 
 
 This document contains the following details:
-Description of the Topology
-Access Policies
-ELK Configuration
-Beats in Use
-Machines Being Monitored
-How to Use the Ansible Build
+- Description of the Topology
+- Access Policies
+- ELK Configuration
+  - Beats in Use
+  - Machines Being Monitored
+- How to Use the Ansible Build
 
 
 **Description of the Topology**
@@ -57,11 +57,11 @@ The machines on the internal network are not exposed to the public Internet.
 
 Only the Jumpbox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP address: 
 
-71.63.124.128
+- 71.63.124.128
 
 Machines within the network can only be accessed by Port 22.
 
-10.0.0.4
+- 10.0.0.4
 
 A summary of the access policies in place can be found in the table below.
 
@@ -77,15 +77,15 @@ A summary of the access policies in place can be found in the table below.
 
 Ansible was used to automate the configuration of the ELK machine. No configuration was performed manually, which is advantageous because…
 
-Running Ansible from the command line ensures the provisioning scripts are run identically everywhere on every machine.
+- Running Ansible from the command line ensures the provisioning scripts are run identically everywhere on every machine.
 
 The playbook implements the following tasks:
 
-Installed docker
-Installed python3-pip
-Installed docker python module
-Updated the max map count
-Download and launch the docker web container Elk
+- Installed docker
+- Installed python3-pip
+- Installed docker python module
+- Updated the max map count
+- Download and launch the docker web container Elk
 
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
@@ -99,18 +99,18 @@ The following screenshot displays the result of running `docker ps` after succes
 
 This ELK server is configured to monitor the following machines:
 
-10.0.0.7
-10.0.0.8
-10.0.0.9
+- 10.0.0.7
+- 10.0.0.8
+- 10.0.0.9
 
 We have installed the following Beats on these machines:
 
-Filebeats
-Metricbeats
+- Filebeats
+- Metricbeats
 
 These Beats allow us to collect the following information from each machine:
-Filebeats collects system files and log events, then forwards the data to Logstash and Elasticserver.
-Metricbeats collect systems and service metrics, such as memory and CPU usage, and forwards the information to Logstash and Elasticserver.
+- Filebeats collects system files and log events, then forwards the data to Logstash and Elasticserver.
+- Metricbeats collect systems and service metrics, such as memory and CPU usage, and forwards the information to Logstash and Elasticserver.
 
 
 **Using the Playbook**
