@@ -151,6 +151,10 @@ SSH into the control node and follow the steps below:
 
 5. Navigate to Kibana to check that the installation worked as expected: http://13.66.220.177:5601/app/kibana.
 
+How do I specify which machine to install the ELK server on versus which to install Filebeat on? The IP address for the Elk group will need to be updated in the hosts file. Within the header of the install-elk.yml, the “hosts” field needs to be specified as Elk.
+
+
+
 ### Specific Commands Used to Run and Edit the Playbook
 
 - Connect to the Jumpbox using the command:
