@@ -114,21 +114,41 @@ These Beats allow us to collect the following information from each machine:
 
 
 ### Using the Playbook
-
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the Filebeat-configuration.yml file to the Web VM’s.
+- Copy the Filebeat-configuration.yml file to the Ansible container.
 - Update the hosts file to include 10.0.0.7, 10.0.0.8, 10.0.0.9, 10.1.0.4.
 - Run the playbook, and navigate to Kibana to check that the installation worked as expected.
 
-Filebeat-playbook.yml is the actual playbook that can be found in the etc/ansible/roles directory. The filebeat-configuration.yml file was copied to /etc/filebeat/filebeat.yml. 
+1. Copy the configuration file to the Ansible container
+2. Add the VM’s to Ansible’s hosts file by typing the command nano /etc/ansible/hosts. When you run playbooks with Ansible, you specify which group to run them on. This allows you to run certain playbooks on some machines, but not on others.
 
-The etc/ansible/hosts file is updated with IP addresses to make Ansible run the playbook on a specific machine. It is specified under the webservers group. By adding the IP addresses, this allows you to run playbooks on specific machines.
+     `/etc/ansible/hosts`
 
-How do I specify which machine to install the ELK server on versus which to install Filebeat on? The IP address for the Elk group will need to be updated in the hosts file. Also, within the header of the install-elk.yml, the “hosts” field needs to be specified as Elk.
 
-The URL to check in order to see if the ELK server is running is http://13.66.220.177:5601/app/kibana.
+     `[webservers]`
+
+
+     `10.0.0.4 ansible_python_interpreter=/usr/bin/python3`
+
+     `10.0.0.5 ansible_python_interpreter=/usr/bin/python3`
+
+     `10.0.0.6 ansible_python_interpreter=/usr/bin/python3`
+
+     `[elk]`
+
+
+     `10.1.0.4 ansible_python_interpreter=/usr/bin/python3`
+
+
+
+
+3. Create the install-elk.yml playbook and save it to etc/ansible/roles directory.
+
+4. Run the playbook using the command ansible-playbook install-ek.yml
+
+5. The URL to check and see if the ELK server is running is http://13.66.220.177:5601/app/kibana.
 
 ### Specific Commands Used to Run and Edit the Playbook
 
