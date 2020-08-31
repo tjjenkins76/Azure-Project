@@ -130,7 +130,7 @@ How do I specify which machine to install the ELK server on versus which to inst
 
 The URL to check in order to see if the ELK server is running is http://13.66.220.177:5601/app/kibana.
 
-The specific commands a user will need to download and run the playbook are as follows:
+**Specific Commands Used to Run and Edit the Playbook
 - Connect to the Jumpbox using the command:
 ssh sysadmin@52.188.157.214  (Note: the IP address is the public IP for the Jumpbox)
 - Connect to the Ansible container by using the following commands:
