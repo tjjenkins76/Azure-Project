@@ -128,17 +128,5 @@ How do I specify which machine to install the ELK server on versus which to inst
 
 The URL to check in order to see if the ELK server is running is http://13.66.220.177:5601/app/kibana.
 
-The specific commands a user will need to download and run the playbook are as follows:
-Connect to the Jumpbox using the command:
-$ ssh sysadmin@52.188.157.214  (Note: the IP address is the public IP for the Jumpbox)
-Connect to the Ansible container by using the following commands:
-$ sudo docker container list -a
-$ sudo docker start ndly_clarke
-$ sudo docker attach ndly_clarke
-Use the following command to run the playbook:
- ansible-playbook etc/ansible/roles/filebeat-playbook.yml
-To update or edit the playbook, run the command:
- nano /etc/ansible/roles/filebeat-playbook.yml
-
 
 
