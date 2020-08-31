@@ -128,12 +128,12 @@ The etc/ansible/hosts file is updated with IP addresses to make Ansible run the 
 
  /etc/ansible/hosts
  [webservers]
- 10.0.0.7 ansible_python_interpreter=/usr/bin/python3
- 10.0.0.8 ansible_python_interpreter=/usr/bin/python3
- 10.0.0.9 ansible_python_interpreter=/usr/bin/python3
+ - 10.0.0.7 ansible_python_interpreter=/usr/bin/python3
+ - 10.0.0.8 ansible_python_interpreter=/usr/bin/python3
+ - 10.0.0.9 ansible_python_interpreter=/usr/bin/python3
 
  [elk]
- 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
+ - 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
 
 How do I specify which machine to install the ELK server on versus which to install Filebeat on? The IP address for the Elk group will need to be updated in the hosts file. Also, within the header of the install-elk.yml, the “hosts” field needs to be specified as Elk.
 
